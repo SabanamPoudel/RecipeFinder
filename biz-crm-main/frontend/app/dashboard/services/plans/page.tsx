@@ -289,8 +289,8 @@ export default function PlansPage() {
   }
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-      <div className="w-full px-8 py-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      <div className="w-full px-8 py-12">
         {/* Modern Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between">
@@ -397,7 +397,7 @@ export default function PlansPage() {
                   filteredPlans.map((plan) => (
                     <tr key={plan.id} className="hover:bg-gradient-to-r hover:from-blue-50/30 hover:to-indigo-50/20 transition-all duration-200 group">
                       {/* Plan Details */}
-                      <td className="px-6 py-6">
+                      <td className="px-6 py-10">
                         <div className="flex items-center space-x-3">
                           <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-[#003174] to-[#0052a8] rounded-xl flex items-center justify-center text-white font-bold text-sm">
                             {plan.name.charAt(0)}
@@ -417,7 +417,7 @@ export default function PlansPage() {
                       </td>
 
                       {/* Type */}
-                      <td className="px-6 py-6 whitespace-nowrap">
+                      <td className="px-6 py-10 whitespace-nowrap">
                         <span className={`inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold ${
                           plan.type === 'ADDON' 
                             ? 'bg-purple-100 text-purple-700 border border-purple-200' 
@@ -428,7 +428,7 @@ export default function PlansPage() {
                       </td>
 
                       {/* Pricing */}
-                      <td className="px-6 py-6 whitespace-nowrap">
+                      <td className="px-6 py-10 whitespace-nowrap">
                         <div className="space-y-1">
                           <div className="flex items-baseline space-x-1">
                             <span className="text-lg font-bold text-gray-900">${(plan.monthlyPriceCents / 100).toFixed(0)}</span>
@@ -442,7 +442,7 @@ export default function PlansPage() {
                       </td>
 
                       {/* Service Types */}
-                      <td className="px-6 py-6">
+                      <td className="px-6 py-10">
                         <div className="flex flex-wrap gap-1.5 max-w-xs">
                           {plan.planServices && plan.planServices.length > 0 ? (
                             plan.planServices.map((ps, idx) => (
@@ -464,7 +464,7 @@ export default function PlansPage() {
                       </td>
 
                       {/* Related to */}
-                      <td className="px-6 py-6 whitespace-nowrap">
+                      <td className="px-6 py-10 whitespace-nowrap">
                         {plan.companyType ? (
                           <span className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-green-50 text-green-700 border border-green-100">
                             {plan.companyType.name}
@@ -475,7 +475,7 @@ export default function PlansPage() {
                       </td>
 
                       {/* Status */}
-                      <td className="px-6 py-6 whitespace-nowrap">
+                      <td className="px-6 py-10 whitespace-nowrap">
                         <span className={`inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold ${
                           plan.isActive 
                             ? 'bg-green-100 text-green-700 border border-green-200' 
@@ -487,7 +487,7 @@ export default function PlansPage() {
                       </td>
 
                       {/* Actions */}
-                      <td className="px-6 py-6 whitespace-nowrap text-right">
+                      <td className="px-6 py-10 whitespace-nowrap text-right">
                         <div className="relative inline-block text-left">
                           <button
                             onClick={() => setOpenMenuId(openMenuId === plan.id ? null : plan.id)}
